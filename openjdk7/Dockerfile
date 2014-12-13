@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM dhorbach/base
 
 MAINTAINER Dzmitry Horbach dim.horbach@gmail.com
 
