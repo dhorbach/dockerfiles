@@ -1,0 +1,19 @@
+<solr>
+ 
+  <solrcloud>
+    <str name="host">${host:}</str>
+    <int name="hostPort">${jetty.port:8983}</int>
+    <str name="hostContext">${hostContext:solr}</str>
+    <int name="zkClientTimeout">${zkClientTimeout:30000}</int>
+    <bool name="genericCoreNodeNames">${genericCoreNodeNames:true}</bool>
+    <int name="distribUpdateConnTimeout">1000</int>
+    <int name="distribUpdateSoTimeout">5000</int>
+  </solrcloud>
+ 
+  <shardHandlerFactory name="shardHandlerFactory"
+                       class="HttpShardHandlerFactory">
+    <int name="socketTimeout">${socketTimeout:3000}</int>
+    <int name="connTimeout">${connTimeout:1000}</int>
+  </shardHandlerFactory>
+ 
+</solr>
