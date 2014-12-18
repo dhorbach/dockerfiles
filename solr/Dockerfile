@@ -14,6 +14,8 @@ RUN wget -nv --output-document=/opt/$SOLR.tgz http://www.mirrorservice.org/sites
 ADD solr.xml /opt/solr/
 ADD solr-wrapper.sh /opt/solr/
 
+RUN chmod +x /opt/solr/solr-wrapper.sh
+
 EXPOSE 8983
 
 WORKDIR /opt/solr
