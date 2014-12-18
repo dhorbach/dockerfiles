@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ ! -f /cores/solr.xml ]; then
-    cp /opt/solr/solr.xml /cores/solr.xml
+if [ ! -f /opt/solr/example/solr/solr.xml ]; then
+    cp /opt/solr/solr.xml /opt/solr/example/solr/solr.xml
 fi
 
 /opt/solr/bin/solr "$@"

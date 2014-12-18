@@ -9,8 +9,7 @@ RUN wget -nv --output-document=/opt/$SOLR.tgz http://www.mirrorservice.org/sites
     tar -C /opt --extract --file /opt/$SOLR.tgz && \
     rm /opt/$SOLR.tgz && \
     ln -s /opt/$SOLR /opt/solr && \
-    mkdir /logs && rm -rf /opt/solr/example/logs && ln -s /logs /opt/solr/example/logs && \
-    mkdir /cores && rm -rf /opt/solr/example/solr && ln -s /cores /opt/solr/example/solr
+    mkdir /logs && rm -rf /opt/solr/example/logs && ln -s /logs /opt/solr/example/logs
 
 ADD solr.xml /opt/solr/
 ADD solr-wrapper.sh /opt/solr/
