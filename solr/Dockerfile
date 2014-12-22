@@ -21,4 +21,4 @@ EXPOSE 8983
 WORKDIR /opt/solr
 
 # 4.10.2 has solr.autoSoftCommit.maxTime hardcoded to 3s
-CMD ["/bin/bash", "-c", "/opt/solr/solr-wrapper.sh -f -a -Dsolr.autoSoftCommit.maxTime=-1"]
+CMD ["/bin/bash", "-c", "/opt/solr/solr-wrapper.sh -f -a -Dsolr.autoSoftCommit.maxTime=-1 > /dev/null 2>&1"]
