@@ -17,7 +17,7 @@ WORKDIR /opt/nginx-$NGINX_VERSION
 
 RUN ./configure --prefix=/usr/local/nginx --sbin-path=/usr/local/sbin/nginx --conf-path=/etc/nginx/nginx.conf \
      --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/run/nginx.pid --lock-path=/run/lock/subsys/nginx \
-     --user=nginx --group=nginx --add-module=/opt/nginx-goodies-1.2.5 \
+     --user=nginx --group=nginx --add-module=/opt/nginx-goodies-$STICKY_VERSION \
      --with-http_gzip_static_module --with-http_stub_status_module --with-http_ssl_module \
      --with-pcre --with-file-aio --with-http_realip_module --without-http_scgi_module --without-http_uwsgi_module
 RUN make
