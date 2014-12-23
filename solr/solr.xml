@@ -6,14 +6,14 @@
     <str name="hostContext">${hostContext:solr}</str>
     <int name="zkClientTimeout">${zkClientTimeout:30000}</int>
     <bool name="genericCoreNodeNames">${genericCoreNodeNames:true}</bool>
-    <int name="distribUpdateConnTimeout">1000</int>
-    <int name="distribUpdateSoTimeout">5000</int>
+    <int name="distribUpdateConnTimeout">45000</int>
+    <int name="distribUpdateSoTimeout">340000</int>
   </solrcloud>
- 
+
   <shardHandlerFactory name="shardHandlerFactory"
                        class="HttpShardHandlerFactory">
-    <int name="socketTimeout">${socketTimeout:3000}</int>
-    <int name="connTimeout">${connTimeout:1000}</int>
+    <int name="socketTimeout">${socketTimeout:90000}</int>
+    <int name="connTimeout">${connTimeout:15000}</int>
   </shardHandlerFactory>
  
 </solr>
