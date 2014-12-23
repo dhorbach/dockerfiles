@@ -27,7 +27,7 @@ RUN apt-get clean && \
     
 RUN mkdir /etc/nginx/conf.d
 
-COPY nginx.conf /etc/nginx.conf
+ADD nginx.conf /etc/nginx.conf
 
 WORKDIR /etc/nginx
 
