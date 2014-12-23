@@ -10,7 +10,8 @@ WORKDIR /opt
 RUN wget -nv -O - http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz | tar zx
 RUN wget -nv -O - https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/$STICKY_VERSION.tar.gz | tar zx
 RUN mv nginx-goodies* nginx-goodies-$STICKY_VERSION
-RUN apt-get install -y build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libperl-dev
+RUN apt-get update && \
+    apt-get install -y build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libperl-dev
 
 WORKDIR /opt/nginx-$NGINX_VERSION
 
