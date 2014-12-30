@@ -2,7 +2,7 @@ FROM dhorbach/oraclejdk7
 
 MAINTAINER Dzmitry Horbach
 
-ENV SOLR_VERSION 4.10.2
+ENV SOLR_VERSION 4.10.3
 ENV SOLR solr-$SOLR_VERSION
 
 # unzip for zkcli.sh 
@@ -18,6 +18,7 @@ RUN apt-get update && \
 
 ADD solr.xml /opt/solr/
 ADD solr-wrapper.sh /opt/solr/
+ADD jetty.xml /opt/solr/example/etc/
 
 RUN chmod +x /opt/solr/solr-wrapper.sh
 
@@ -25,5 +26,4 @@ EXPOSE 8983
 
 WORKDIR /opt/solr
 
-# 4.10.2 has solr.autoSoftCommit.maxTime hardcoded to 3s
-CMD ["/bin/bash", "-c", "/opt/solr/solr-wrapper.sh -f -a -Dsolr.autoSoftCommit.maxTime=-1 > /dev/null 2>&1"]
+CMD ["/bin/bash", "-c", "/opt/solr/solr-wrapper.sh > /dev/null 2>&1"]
