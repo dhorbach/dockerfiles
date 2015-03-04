@@ -62,4 +62,4 @@ RUN cd $GOPATH/src/github.com/dhorbach/open-ocr/cli-httpd && go build -v -o open
 RUN cd $GOPATH/src/github.com/dhorbach/open-ocr/cli-worker && go build -v -o open-ocr-worker && cp open-ocr-worker /usr/bin
 
 ADD . /opt/
-RUN cd /opt && ./install.sh
+RUN cd /opt && bash install.sh
