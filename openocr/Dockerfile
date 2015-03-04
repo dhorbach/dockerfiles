@@ -61,5 +61,6 @@ RUN cd $GOPATH/src/github.com/dhorbach/open-ocr/cli-httpd && go build -v -o open
 # build open-ocr-worker binary and copy it to /usr/bin
 RUN cd $GOPATH/src/github.com/dhorbach/open-ocr/cli-worker && go build -v -o open-ocr-worker && cp open-ocr-worker /usr/bin
 
+RUN apt-get install libtesseract3  libjsoncpp0 libleptonica-dev -y
 ADD . /opt/
 RUN cd /opt && bash install.sh
