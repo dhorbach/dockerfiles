@@ -31,4 +31,4 @@ case "${input_type}_${with_dpi}" in
 	input="$tmp_file_tiff";;
 esac
 
-${0%/*}/wf_tesseract "$input" > "$output"
+${0%/*}/wf_tesseract "$input" > "$output.json"
