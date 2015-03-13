@@ -27,8 +27,11 @@ input_type=`file "$input" 2>/dev/null | awk '{print $2; exit}'`
 
 case "${input_type}_${with_dpi}" in
     TIFF_1|PNG_1|PDF_*)
-	convert -monochrome -density "$DPI" "$input" "$tmp_file_tiff"
-	input="$tmp_file_tiff";;
+    convert -monochrome -density "$DPI" "$input" "$tmp_file_tiff"
+    input="$tmp_file_tiff";;
+    TIFF_0)
+    mv "$input" "$tmp_file_tiff"
+    input="$tmp_file_tiff";;
 esac
 
 ${0%/*}/wf_tesseract "$input" > "${output}.json"
