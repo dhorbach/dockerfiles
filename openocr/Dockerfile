@@ -65,3 +65,4 @@ RUN apt-get install libtesseract3  libjsoncpp0 libleptonica-dev -y
 RUN apt-get install imagemagick -y
 ADD . /opt/
 RUN cd /opt && bash install.sh
+RUN cp /opt/traineddata/* /usr/share/tesseract-ocr/tessdata/
